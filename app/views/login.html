@@ -1,0 +1,18 @@
+<section class="vertical-page">
+	<form class="main-form" name="loginForm" data-ng-submit="submitForm(loginForm.$valid)" novalidate>
+		<h2>Login</h2>
+		<div class="row">
+			<input type="email" placeholder="Email" data-ng-model="email" required>
+		</div>
+		<div class="row alt">
+			<input type="Password" placeholder="Password" name="password" data-ng-model="password" data-ng-minlength="6" data-ng-maxlength="16" data-ng-pattern="/^[a-zA-Z0-9]+$/" required>
+			<span class="watchout animate-if" data-ng-if="!loginForm.password.$error.required && (loginForm.password.$error.minlength || loginForm.password.$error.maxlength) && loginForm.password.$dirty">Passwords must be between 6 and 16 characters.</span>
+			<em class="error animate-if" data-ng-if="errorLogin">Incorrect username or password</em>
+		</div>
+		<div class="row">
+			<input id="checkme" class="chek-me" data-ng-model="ch" type="checkbox">
+			<label for="checkme">Remember me</label>
+		</div>
+		<button type="submit" class="btn big">Login</button>
+	</form>
+</section>

@@ -1,0 +1,32 @@
+[
+	{
+		"title": "AUDI",
+		"description": "The company name is based on the Latin translation of the surname of the founder, August Horch. \"Horch\", meaning \"listen\" in German, becomes \"audi\" in Latin. The four rings of the Audi logo each represent one of four car companies that banded together to create Audi's predecessor company, Auto Union. Audi's slogan is Vorsprung durch Technik, meaning \"Advancement through Technology\". However, since 2007 Audi USA has used the slogan \"Truth in Engineering\".[13] Audi is among the best-selling luxury automobiles in the world.",
+		"models": [
+			"A6",
+			"A7",
+			"A8"
+		],
+		"country": "Germany"
+	},
+	{
+		"title": "BMW",
+		"description": "Is a German luxury automobile, motorcycle, and engine manufacturing company founded in 1916. Headquartered in Munich, Bavaria, Germany, it also owns and produces Mini cars and serves as the parent company of Rolls-Royce Motor Cars. BMW produces motorcycles under BMW Motorrad, and plug-in electric cars under the BMW i sub-brand. It is one of the best-selling luxury automakers in the world. The company is a component of the Euro Stoxx 50 stock market index.",
+		"models": [
+			"5-series",
+			"6-series",
+			"7-series"
+		],
+		"country": "Germany"
+	},
+	{
+		"title": "Mercedes-Benz",
+		"description": "Is a German automobile manufacturer, a multinational division of the German manufacturer Daimler AG. The brand is known for luxury automobiles, buses, coaches, and trucks. The headquarters of Mercedes-Benz is in Stuttgart, Baden-Württemberg, Germany",
+		"models": [
+			"E-class",
+			"CLS-class",
+			"S-class"
+		],
+		"country": "Germany"
+	}
+]

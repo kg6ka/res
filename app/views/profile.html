@@ -1,0 +1,36 @@
+<section class="profile">
+	<div class="container">
+		<form class="main-form profile" name="profileForm" data-ng-submit="submitForm(profileForm.$valid)" novalidate>
+			<div class="row">
+				<div class="col align-left">
+					<input type="text" placeholder="Name" data-ng-model="name" data-ng-maxlength="255" required>
+				</div>
+				<div class="col align-right">
+					<input type="text" placeholder="Surname" data-ng-model="surname" data-ng-maxlength="255" required>
+				</div>
+			</div>
+			<div class="row">
+				<input type="email" placeholder="Email" data-ng-model="email" required>
+			</div>
+			<div class="row">
+				<input type="tel" placeholder="Phone number" data-ng-model="phone" required>
+			</div>
+			<div class="frame animate-slide" data-ng-if="change">
+				<div class="row">
+					<input type="password" name="password" placeholder="Password" data-ng-model="$parent.password" data-ng-minlength="6" data-ng-maxlength="16" data-ng-pattern="/^[a-zA-Z0-9]+$/" required>
+				</div>
+				<div class="row">
+					<input type="password" name="password_c" placeholder="Confirm password" data-ng-model="password_c" confirm-password="password" required>
+					<span class="watchout animate-if" data-ng-if="profileForm.password_c.$error.required && profileForm.password_c.$dirty">Please confirm your password.</span>
+				</div>
+				<button class="btn change green" data-ng-click="confirm($event)" type="button">Save password</button>
+			</div>
+			<div class="row">
+			<button type="button" class="btn green animate-if" data-ng-if="!change" data-ng-click="openClose($event)">Change password</button>
+			</div>
+			<div class="row">
+				<input class="btn big full-width" type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+</section>

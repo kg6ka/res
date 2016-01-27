@@ -1,0 +1,17 @@
+<section class="vertical-page">
+	<form class="main-form item" name="itemForm" data-ng-submit="submitForm(itemForm.$valid)" novalidate>
+		<div class="row">
+			<input type="text" data-ng-if="create" placeholder="Title" ng-model="$parent.title" ng-maxlength="255" required>
+			<input type="text" data-ng-if="edit" placeholder="Title" data-ng-model="items[indexItem].title" ng-maxlength="255" required>
+		</div>
+		<div class="row">
+			<input type="number" data-ng-if="create" placeholder="Cost" data-ng-model="$parent.price" required>
+			<input type="number" data-ng-if="edit" placeholder="Cost" data-ng-model="items[indexItem].price" required>
+		</div>
+		<div class="row">
+			<textarea class="textarea" type="textarea" data-ng-if="create" placeholder="Description" data-ng-model="$parent.desc" ng-maxlength="1000" required></textarea>
+			<textarea class="textarea" type="textarea" data-ng-if="edit" placeholder="Description" data-ng-model="items[indexItem].desc" ng-maxlength="1000" required></textarea>
+		</div>
+		<input type="submit" class="btn big" value="Save">
+	</form>
+</section>

@@ -1,0 +1,72 @@
+<section class="main">
+	<div class="container">
+		<!-- info start -->
+		<div class="info" data-ng-controller="userCtrl">
+			<div class="img-holder align-left">
+				<img src="images/person.jpg" alt="image desciption" width="225" height="225">
+			</div>
+			<div class="wrap">
+				<h2>{{user.name}}</h2>
+				<em class="mail">{{user.email}}</em>
+				<a class="btn orange" data-ng-href="#/profile">Settings</a>
+				<a class="btn gray" data-ng-href="#/logout">Log Out</a>
+			</div>
+		</div>
+		<!-- info end -->
+		<!-- options start -->
+		<div class="options-holder">
+			<button class="btn green align-left" data-ng-click="removeItems()">Remove mark</button>
+			<ul class="selector-page align-right">
+				<li class="active" add-class-drct><button type="button" class="btn white" data-ng-click="changePrePage(10)">10</button></li>
+				<li add-class-drct><button type="button" class="btn white" data-ng-click="changePrePage(20)">20</button></li>
+				<li add-class-drct><button type="button" class="btn white" data-ng-click="changePrePage(50)">50</button></li>
+			</ul>
+		</div>
+		<!-- options end -->
+		<!-- item list start -->
+		<ul class="item-list">
+			<li data-ng-repeat="item in items | paginationStart: curPage * rowsPerPage | limitTo: rowsPerPage">
+				<div class="col-1">
+					<span class="number">{{getIndexItem($index + 1)}}</span>
+					<h2>{{item.title}}</h2>
+					<a class="details" id="details" data-ng-click="enablePane($index + 1)">Details</a>
+					<div class="box animate-slide" data-ng-if="enabled == indexItem">
+						<p>{{item.desc}}</p>
+					</div>
+				</div>
+				<div class="col-2">
+					<strong class="price">{{item.price | currency: 'UAH '}}</strong>
+					<div class="btn-holder">
+						<a data-ng-href="#/create" class="btn" type="button">Create</a>
+						<a href data-ng-click="Edit($index)" class="btn" type="button">Edit</a>
+						<input class="chek-me" class="check" type="checkbox" id="check-item_{{getIndexItem($index + 1)}}" data-ng-model="item.status">
+						<label for="check-item_{{getIndexItem($index + 1)}}"></label>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<!-- item list end -->
+		<!-- pagination start -->
+		<div class="pagination" data-ng-show="items.length">
+			<ul >
+				<li>
+					<button type="button" class="btn btn-primary" data-ng-disabled="firstPage()" data-ng-click="pageBack()"> &lt; PREV</button>
+				</li>
+				<li>Page {{curPage + 1}} of {{ numberOfPages() }}</li>
+				<li>
+					<button type="button" class="btn btn-primary" data-ng-disabled="lastPage()" data-ng-click="pageForward()">NEXT &gt;</button>
+				</li>
+			</ul>
+		</div>
+		<!-- pagination end -->
+		<article class="posts" data-ng-controller="itemCtrl">
+			<ul>
+				<li data-ng-repeat="post in articles">
+					<h2>{{post.title}}</h2>
+					<p>{{post.description}}</p>
+					<em class="country">{{post.country}}</em>
+				</li>
+			</ul>
+		</article>
+	</div>
+</section>
